@@ -1,0 +1,59 @@
+#JAntiPlugin by JoseMarcellio
+#hex color support for 1.16+
+#list executor: [command], [message], [sound]
+ 
+#you can set this to false, if you don't want to block all tab complete
+#this will not affect, because .plugins have been blocked using packet
+#whitelist-tab-complete-command only work on 1.13+ and block-tab-complete: true
+block-tab-complete: true
+whitelist-tab-complete-command:
+  - "jantiplugin"
+ 
+block-syntax: true
+#set message to "none" if you want to disable message
+syntax-message: "&cYou are not allowed to use syntax!"
+ 
+#use {random}, {alphabeth}, {number}, {cencor} to random replace block-chat
+#you can also custom replace without using the format above
+#use {player} to get player, {chat} to get chat
+block-chat:
+  "fuck":
+    replace: "{random}"
+    executor:
+      - "[command]kick {player} &cYou are not allowed to say {chat} on this server!"
+  "idiot":
+    replace: "{number}"
+    executor:
+      - "[message]&cYou are not allowed to say {chat} on this server!"
+  "stupid":
+    replace: "{cencor}"
+    executor:
+      - "[sound]ENDERMAN_TELEPORT"
+      - "[message]&cYou are not allowed to say {chat} on this server!"
+ 
+#use {command} to get command
+block-command:
+  "?":
+    executor:
+      - "[sound]VILLAGER_NO"
+      - "[message]&cYou are not allowed to use /{command} on this server!"
+  "pl":
+    executor:
+      - "[message]&cWhat are you doing?"
+      - "[command]broadcast {player} trying to use /{command}"
+      - "[sound]VILLAGER_NO"
+  "plugins":
+    executor:
+      - "[message]&cYou are not allowed to use /{command} on this server!"
+  "about":
+    executor:
+      - "[message]&cYou are not allowed to use /{command} on this server!"
+  "help":
+    executor:
+      - "[message]&cYou are not allowed to use /{command} on this server!"
+  "ver":
+    executor:
+      - "[message]&cYou are not allowed to use /{command} on this server!"
+  "version":
+    executor:
+      - "[message]&cYou are not allowed to use /{command} on this server!"
