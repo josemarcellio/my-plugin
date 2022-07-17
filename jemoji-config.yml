@@ -18,6 +18,18 @@ clear-color-symbol: "&r"
 status-owned: "&cYou already have this emoji!"
 status-purchase: "&eClick to purchase!"
 
+next-page:
+  name: "&7Next Page &e&l→"
+  icon: "ARROW"
+  lore:
+    - "&7Click to go to the next page"
+
+previous-page:
+  name: "&e&l← &7Previous Page"
+  icon: "ARROW"
+  lore:
+    - "&7Click to return to the previous page"
+
 emoji:
   "<3":
     name: "{emoji}"
